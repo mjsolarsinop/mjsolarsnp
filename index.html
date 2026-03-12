@@ -181,38 +181,3 @@
   }
 </script>
 
-</body>
-</html>
-ong>PIX</strong>
-          <span>Clique para copiar a chave</span>
-        </div>
-      </div>
-      <span class="access-text">Copiar</span>
-    </div>
-  </main>
-</div>
-
-<div id="toast">Chave PIX copiada!</div>
-
-<script>
-  function copyPix(chave) {
-    navigator.clipboard.writeText(chave).then(() => {
-      showToast("Chave PIX copiada com sucesso!");
-    });
-  }
-
-  function showToast(mensagem) {
-    const toast = document.getElementById("toast");
-    toast.innerText = mensagem;
-    toast.className = "show";
-    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-  }
-</script>
-
-</body>
-</html>
-
-
-</body>
-</html>
-/html>
