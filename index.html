@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MJ Solar Sinop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
@@ -41,6 +42,7 @@
       text-align: center;
     }
 
+    /* MOLDURA DA LOGO */
     .logo-circle {
       width: 115px; height: 115px;
       background: #fff;
@@ -48,14 +50,16 @@
       margin: 0 auto 20px;
       display: flex; align-items: center; justify-content: center;
       border: 3px solid var(--solar-yellow);
-      overflow: hidden;
+      overflow: hidden; /* Faz o zoom funcionar sem sair do círculo */
       position: relative;
     }
 
+    /* EFEITO DE ZOOM NA LOGO */
     .logo-circle img { 
-      width: 100%; 
-      height: 100%;
+      width: 240%; /* Aumenta muito para remover as bordas do Canva */
+      height: auto;
       object-fit: contain;
+      transform: scale(1.1); /* Ajuste fino do tamanho final */
     }
 
     h1 { font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 10px; font-weight: bold; }
@@ -136,7 +140,7 @@
       <span class="access-text">Acessar</span>
     </a>
 
-    <a href="https://www.google.com/maps/place/11%C2%B049'57.6%22S+55%C2%B032'02.5%22W/@-11.832676,-55.534039,15z/data=!4m4!3m3!8m2!3d-11.832676!4d-55.534039?utm_campaign=ml-ardl&g_ep=Eg1tbF8yMDI2MDMwOV8wIOC7DCoASAJQAQ%3D%3D" target="_blank" class="card">
+    <a href="https://google.com/maps/place/RESIDENCIAL+SANTA+CEC%C3%8DLIA+SINOP%2FMT/@-11.8596642,-55.5173163,17z/data=!3m1!4b1!4m6!3m5!1s0x93a7812e2cdff9bd:0xc5bd0742569dddfe!8m2!3d-11.8596642!4d-55.5173163!16s%2Fg%2F125z07z6g?entry=ttu" target="_blank" class="card">
       <div class="card-info">
         <i class="fas fa-location-dot location-color"></i>
         <div class="text-group">
