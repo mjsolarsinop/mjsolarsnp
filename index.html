@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0f1217;
+      --card-bg: rgba(26, 26, 29, 0.9);
+      --accent-white: #ffffff;
+      --text-gray: #b0b0b0;
+      --solar-yellow: #FFD700;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-white);
+      min-height: 100vh;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1509391366360-fe5bb6583e22?q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 40px 20px 100px 20px;
+      text-align: center;
+    }
+
+    .logo-circle {
+      width: 115px; height: 115px;
+      background: #fff;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid var(--solar-yellow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logo-circle img { 
+      width: 240%; 
+      height: auto;
+      object-fit: contain;
+      transform: scale(1.15);
+    }
+
+    h1 { font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 10px; font-weight: bold; }
+    .description { font-size: 0.85rem; color: #ccc; margin-bottom: 25px; line-height: 1.5; padding: 0 10px; }
+
+    .btn-save {
+      background: white; color: black;
+      border: none; padding: 10px 25px;
+      border-radius: 6px; font-weight: bold;
+      cursor: pointer; margin-bottom: 40px;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .links-container { display: flex; flex-direction: column; gap: 12px; }
+
+    .card {
+      background: var(--card-bg);
+      text-decoration: none; color: white;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .card:active { transform: scale(0.98); background: rgba(40, 40, 45, 1); }
+
+    .card-info { display: flex; align-items: center; gap: 15px; }
+    .text-group { text-align: left; }
+    .text-group strong { display: block; font-size: 1rem; }
+    .text-group span { font-size: 0.75rem; color: var(--text-gray); }
+
+    .access-text { font-size: 0.85rem; opacity: 0.8; }
+
+    .whatsapp-color { color: #25D366; font-size: 1.5rem; }
+    .instagram-color { color: #E4405F; font-size: 1.5rem; }
+    .location-color { color: #ffffff; font-size: 1.5rem; }
+
+    #toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px;
+      position: fixed;
+      z-index: 10;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%);
+    }
+
+    #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+    @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }
+    @keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+  </style>
+</head>
+<body>
+
+<div class="background-image"></div>
+
+<div class="container">
+  <header>
+    <div class="logo-circle">
+      <img src="https://i.ibb.co/3gRW61j/Picsart-26-03-12-13-25-49-798.jpg" alt="MJ Solar Logo">
+    </div>
+    <h1>MJ SOLAR SINOP</h1>
+    <p class="description">Economia inteligente e energia sustentável. Reduza sua conta de luz com quem entende do assunto em Sinop.</p>
+    
+    <a href="https://wa.me/556699818854" class="btn-save">ORÇAMENTO <i class="fas fa-bolt"></i></a>
+  </header>
+
+  <main class="links-container">
+    <a href="https://wa.me/556699818854?text=Olá!+Vi+seu+site+e+gostaria+de+fazer+um+orçamento+solar." target="_blank" class="card">
+      <div class="card-info">
+        <i class="fab fa-whatsapp whatsapp-color"></i>
+        <div class="text-group">
+          <strong>WhatsApp</strong>
+          <span>Fale com nossa equipe</span>
+        </div>
+      </div>
+      <span class="access-text">Acessar</span>
+    </a>
+
+    <a href="https://www.instagram.com/mj_solar_sinop" target="_blank" class="card">
+      <div class="card-info">
+        <i class="fab fa-instagram instagram-color"></i>
+        <div class="text-group">
+          <strong>Instagram</strong>
+          <span>Acompanhe nossos projetos</span>
+        </div>
+      </div>
+      <span class="access-text">Acessar</span>
+    </a>
+
+    <a href="https://maps.app.goo.gl/uR6GkR1pX7xN7v6Z8" target="_blank" class="card">
+      <div class="card-info">
+        <i class="fas fa-location-dot location-color"></i>
+        <div class="text-group">
+          <strong>Endereço Sinop</strong>
+          <span>R. Milena, 2329 - Santa Cecília</span>
+        </div>
+      </div>
+      <span class="access-text">Acessar</span>
+    </a>
+  </main>
+</div>
+
+<div id="toast">Copiado!</div>
+
+<script>
+  function showToast(mensagem) {
+    const toast = document.getElementById("toast");
+    toast.innerText = mensagem;
+    toast.className = "show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+  }
+</script>
+
+</body>
+</html>
+ong>PIX</strong>
+          <span>Clique para copiar a chave</span>
+        </div>
+      </div>
+      <span class="access-text">Copiar</span>
+    </div>
+  </main>
+</div>
+
+<div id="toast">Chave PIX copiada!</div>
+
+<script>
+  function copyPix(chave) {
+    navigator.clipboard.writeText(chave).then(() => {
+      showToast("Chave PIX copiada com sucesso!");
+    });
+  }
+
+  function showToast(mensagem) {
+    const toast = document.getElementById("toast");
+    toast.innerText = mensagem;
+    toast.className = "show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+  }
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
+/html>
